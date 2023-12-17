@@ -10,7 +10,7 @@ final class ImageGeneratorTest extends TestCase
     protected $image;
     protected function setUp(): void
     {
-        $settings = ['apikey' => 'xxxxxxxxxx'];
+        $settings = ['api_key' => 'xxxxxxxxxx'];
         $this->image = new ImageGenerator($settings);
     }
 

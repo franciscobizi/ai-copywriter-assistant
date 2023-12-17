@@ -10,7 +10,7 @@ final class ContentGeneratorTest extends TestCase
     protected $content;
     protected function setUp(): void
     {
-        $settings = ['apikey' => 'xxxxxxxxxx'];
+        $settings = ['api_key' => 'xxxxxxxxxx'];
         $this->content = new ContentGenerator($settings);
     }
 
