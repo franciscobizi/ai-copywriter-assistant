@@ -1,20 +1,7 @@
-# ai-copywriter-assistant
-AI Copywriter Assistant - A package to generate article content and images based on titles. The package uses OpenAI API to do the job.
+<?php
 
-## Installation
-Package is available on [Packagist](https://packagist.org/packages/fbizi/ai-copywriter-assistant), you can install it using Composer.
-
-```composer require fbizi/ai-copywriter-assistant```
-
-## Dependencies
-- PHP 7.4+
-- guzzlehttp/guzzle
-
-## Basic usage
-Before use this package make sure to register an account with OpenAI and create API Key, so you can make APIs calls. Follow this [link](https://openai.com/) if you don't have yet an account.
-
-```ruby
 require __DIR__ . "/vendor/autoload.php";
+require __DIR__ . "./config.php";
 
 use FBIZI\AICopywriterAssistant\{CopywriterAssistant, ContentGenerator, ImageGenerator};
 
@@ -38,19 +25,10 @@ $imageGenerator = new ImageGenerator($config);
 
 $copywriterAssistant = new CopywriterAssistant($contentGenerator, $imageGenerator);
 
-$title = 'The use of AI today';
+$title = 'Social media today';
 // Generate an article
 $article = $copywriterAssistant->generateArticle($title);
 
 // Use the generated article as needed
 
-print_r($article); // return array of ['title' => 'the entered title', 'content' => 'generated content', 'images' => ['urls']]
-
-```
-
-## Donation
-Methods :
-
-- [Buy me a coffee](https://www.buymeacoffee.com/franciscobizi)
-
-If this package help you reduce time to develop, you can give me a cup of coffee :)
+print_r($article);
