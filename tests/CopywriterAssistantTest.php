@@ -1,20 +1,19 @@
 <?php
 
 namespace FBIZI\AICopywriterAssistant\Tests;
+
 use PHPUnit\Framework\TestCase;
+use FBIZI\AICopywriterAssistant\{ContentGenerator, ImageGenerator, CopywriterAssistant};
 
 final class CopywriterAssistantTest extends TestCase
 {
     protected $assistant;
     protected function setUp(): void
     {
-        $settings = [
-            'chatgpt' => ['apikey' => 'jdjjd'],
-            'leonardo' => ['apikey' => 'jdjjd']
-        ];
-        
-        $contentGenerator = new ContentGenerator($settings['chatgpt']);
-        $imageGenerator = new ImageGenerator($settings['leonardo']);
+        $settings = ['apikey' => 'xxxxxxxxxx'];
+        $contentGenerator = new ContentGenerator($settings);
+        $imageGenerator = new ImageGenerator($settings);
+
         $this->assistant = new CopywriterAssistant($contentGenerator, $imageGenerator);
     }
 
@@ -22,6 +21,6 @@ final class CopywriterAssistantTest extends TestCase
     {
         $article = $this->assistant->generateArticle('Women lifestyle');
 
-        $article->assertIsArray();
+        $this->assertIsArray($article);
     }
 }
