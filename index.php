@@ -1,9 +1,11 @@
 <?php
 
+use FBIZI\AICopywriterAssistant\CopywriterAssistant;
+use FBIZI\AICopywriterAssistant\ContentGenerator;
+use FBIZI\AICopywriterAssistant\ImageGenerator;
+
 require __DIR__ . "/vendor/autoload.php";
 require __DIR__ . "./config.php";
-
-use FBIZI\AICopywriterAssistant\{CopywriterAssistant, ContentGenerator, ImageGenerator};
 
 $config = [
   'api_key' => OPENAIKEY,
