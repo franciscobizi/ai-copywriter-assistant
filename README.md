@@ -14,12 +14,14 @@ Package is available on [Packagist](https://packagist.org/packages/fbizi/ai-copy
 Before use this package make sure to register an account with OpenAI and create API Key, so you can make APIs calls. Follow this [link](https://openai.com/) if you don't have yet an account.
 
 ```ruby
-require __DIR__ . "/vendor/autoload.php";
+use FBIZI\AICopywriterAssistant\CopywriterAssistant;
+use FBIZI\AICopywriterAssistant\ContentGenerator;
+use FBIZI\AICopywriterAssistant\ImageGenerator;
 
-use FBIZI\AICopywriterAssistant\{CopywriterAssistant, ContentGenerator, ImageGenerator};
+require __DIR__ . "/vendor/autoload.php"; 
 
 $config = [
-  'api_key' => OPENAIKEY,
+  'api_key' => 'OPENAIKEY',
   'content' => [
     'max_tokens' => 20, // optional by default uses 20
     'model' => 'gpt-3.5-turbo' // optional by default uses gpt-3.5-turbo
@@ -38,7 +40,7 @@ $imageGenerator = new ImageGenerator($config);
 
 $copywriterAssistant = new CopywriterAssistant($contentGenerator, $imageGenerator);
 
-$title = 'The use of AI today';
+$title = 'Social media today';
 // Generate an article
 $article = $copywriterAssistant->generateArticle($title);
 

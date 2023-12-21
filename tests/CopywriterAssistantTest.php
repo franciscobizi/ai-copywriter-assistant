@@ -10,7 +10,7 @@ final class CopywriterAssistantTest extends TestCase
     protected $assistant;
     protected function setUp(): void
     {
-        $settings = ['apikey' => 'xxxxxxxxxx'];
+        $settings = ['api_key' => 'xxxxxxxxxx'];
         $contentGenerator = new ContentGenerator($settings);
         $imageGenerator = new ImageGenerator($settings);
 
